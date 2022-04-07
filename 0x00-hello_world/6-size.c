@@ -2,6 +2,7 @@
 
 /**
  * Display the size of different datat types
+ * return zero if succesful
  */
 
 int main(void)
