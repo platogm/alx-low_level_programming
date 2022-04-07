@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/**
+ * Display the size of different datat types
+ */
+
 int main(void)
 {
 		int charSize = sizeof(char);
