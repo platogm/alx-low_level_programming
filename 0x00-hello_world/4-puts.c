@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 /**
- *Prints a string on STDOUT and return zero 
+ * main - Prints a string on STDOUT and return zero 
+ *
+ * Return: zero on success
  */
 
 int main(void)

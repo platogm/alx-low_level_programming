@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 /**
- * Prints a string using printf
+ * main - Prints a string using printf
+ *
+ * Return - zero on success
+ *
  */
 
 int main(void)
