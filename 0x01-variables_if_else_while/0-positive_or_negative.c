@@ -4,7 +4,7 @@
 /**
  * main - Checks and display the sign of n
  *
- * Return: 0 if correct 
+ * Return: 0 if correct
  */
 int main(void)
 {	
