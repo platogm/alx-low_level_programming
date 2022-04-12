@@ -95,4 +95,12 @@ int add(int n1, int n2);
  */
 void print_to_98(int n);
 
+/**
+ * print_times_table - prints a time table
+ * @n: size of the table
+ *
+ * Return: nothing
+ */
+void print_times_table(int n);
+
 #endif
