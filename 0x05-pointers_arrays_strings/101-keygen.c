@@ -12,15 +12,14 @@ int main(void)
 {
 	srand(time(0));
 
-	int length = rand() % 100;
-	char password[length + 1];
+	char password[101];
 	int i;
 
-	for (i = 0; i < length; i++)
+	for (i = 0; i < 100; i++)
 	{
 		password[i] = (48 + rand() % 10);
 	}
 
-	password[length] = '\0';
+	password[100] = '\0';
 	printf("%s", password);
 }
