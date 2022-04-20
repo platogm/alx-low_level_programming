@@ -10,28 +10,17 @@
 char *leet(char *c)
 {
 	int i, j;
-	char replace[109];
+	char *replace;
 
-	for (i = 0; i < 109; i++)
-	{
-		replace[i] = i;
-	}
-
-	replace[97] = 4;
-	replace[65] = 4;
-	replace[101] = 3;
-	replace[69] = 3;
-	replace[111] = 0;
-	replace[79] = 0;
-	replace[116] = 7;
-	replace[84] = 7;
-	replace[108] = 1;
-	replace[76] = 1;
+	replace = "aAeEoOtTlL4433007711";
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
-		c[i] = replace[i];
+		for (j = 0; j <= 9; j++)
+		{
+			if (c[i] == replace[j])
+				c[i] = replace[j + 10];
+		}
 	}
-
 	return (c);
 }
