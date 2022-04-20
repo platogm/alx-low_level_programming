@@ -17,19 +17,21 @@ char *leet(char *c)
 		replace[i] = i;
 	}
 
-	replace['a'] = 4;
-	replace['A'] = 4;
-	replace['e'] = 3;
-	replace['E'] = 3;
-	replace['o'] = 0;
-	replace['O'] = 0;
-	replace['t'] = 7;
-	replace['T'] = 7;
-	replace['l'] = 1;
-	replace['L'] = 1;
+	replace[97] = 4;
+	replace[65] = 4;
+	replace[101] = 3;
+	replace[69] = 3;
+	replace[111] = 0;
+	replace[79] = 0;
+	replace[116] = 7;
+	replace[84] = 7;
+	replace[108] = 1;
+	replace[76] = 1;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{
 		c[i] = replace[i];
 	}
+
+	return (c);
 }
