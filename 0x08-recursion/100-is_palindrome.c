@@ -1,56 +1,47 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - return string length
- * @s: string
- * Description: find string length using recursion
- * Return: string length
- **/
-
-int _strlen_recursion(char *s)
+ * palind2 - obtains length of a
+ * @a: string
+ * @l: integer to count length
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int palind2(char *a, int l)
 {
-	if (s[0] == '\0')
-		return (0);
-
-	if (s[1] == '\0')
-	{
-		return (1);
-	}
-	else
-	{
-		return (_strlen_recursion(&s[1]) + 1);
-	}
-
+	if (*a == 0)
+		return (l - 1);
+	return (palind2(a + 1, l + 1));
 }
-
 /**
- * pd - check if string is a palindrome
- * @s: string to check
- * @n: size of string -1
- * @i: counter through string
- * Description: determins if string is a palindrome
- * Return: 1 if palindrome, 0 if not
- **/
+ * palind3 - compares string vs string reverse
+ * @a: string
+ * @l: length
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 
-int pd(char *s, int n, int i)
+int palind3(char *a, int l)
 {
-	if (n <= i)
-		return (1);
-
-	if (s[i] != s[n])
+	if (*a != *(a + l))
 		return (0);
-
-	return (pd(s, n - 1, i + 1));
+	else if (*a == 0)
+		return (1);
+	return (palind3(a + 1, l - 2));
 }
-
 /**
- * is_palindrome - checks if string is a palindrome
- * @s: string to check
- * Description: determins if string is a palindrome
- * Return: 1 if palindrome, 0 if not
- **/
-
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to evaluate
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 int is_palindrome(char *s)
 {
-	return (pd(s, _strlen_recursion(s) - 1, 0));
+	int l;
+
+	l = palind2(s, 0);
+	return (palind3(s, l));
 }
