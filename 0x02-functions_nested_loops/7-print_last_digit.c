@@ -1,20 +1,23 @@
 #include "main.h"
-
 /**
- * print_last_digit - Prints the last digit of a number
- * @n: the input number
- *
- * Return: Returns the last digit
+ * print_last_digit - is c _isalpha
+ * @n: contains value to be compared
+ * Return: Always 0.
  */
 int print_last_digit(int n)
 {
-	int last = n % 10;
+int last_digit;
 
-	if (last < 0)
-	{
-		last = last * -1;
-	}
-
-	_putchar(last + '0');
-	return (last);
+if (n < 0)
+{
+last_digit = (-1 * (n % 10));
+_putchar (last_digit + '0');
+return (last_digit);
+}
+else
+{
+last_digit = (n % 10);
+_putchar (last_digit + '0');
+return (last_digit);
+}
 }

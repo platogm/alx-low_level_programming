@@ -1,6 +1,6 @@
 #include <unistd.h>
 /**
- * main - Prints a string to stdout
+ * main - Prints
  * Return: Always 1.
  */
 int main(void)

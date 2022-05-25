@@ -1,52 +1,40 @@
-#include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-/**
- * _strlen - returns the length of the string
- * @s: input string to count
- * Description: returns the length of a given string
- * Return: length of string as int
- **/
-int _strlen(char *s)
-{
-	int i;
+# include "main.h"
+# include <stdlib.h>
 
-	for (i = 0; s[i] != '\0'; i++)
-		;
-	return (i + 1);
-}
 /**
- * str_concat - concatenate two strings
- * @s1: first string
- * @s2: second string
- * Description: concatenate two strings, return NULL if fails
- * Return: pointer to string, NULL if fails
- *
- **/
+ *str_concat - concat 2 strings.
+ *@s1: first string.
+ *@s2: second string.
+ *Return: pointer to string.
+*/
+
 char *str_concat(char *s1, char *s2)
 {
-	char *dest;
-	unsigned int i, j;
+	char *s;
+	int i = 0, j = 0, k = 0;
 
-	if (s1 == NULL)
-		s1 = "";
-	i = _strlen(s1);
+	if (s1 != NULL)
+		for (; s1[i]; i++)
+		;
+	if (s2 != NULL)
+		for (; s2[j]; j++)
+		;
 
-	if (s2 == NULL)
-		s2 = "";
-	j = _strlen(s2);
-
-	dest = (char *)malloc((i + j - 1) * sizeof(char));
-
-	if (dest == NULL)
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
 		return (NULL);
 
-	for (i = 0; s1[i] != '\0'; i++)
-		dest[i] = s1[i];
+	while (k < i)
+	{
+		s[k] = s1[k];
+		k++;
+	}
 
-	for (j = 0; s2[j] != '\0'; j++)
-		dest[i + j] = s2[j];
-
-	dest[i + j] = s2[j];
-	return (dest);
+	while (k < i + j)
+	{
+		s[k] = s2[k - i];
+		k++;
+	}
+	s[k] = '\0';
+	return (s);
 }

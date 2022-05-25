@@ -2,25 +2,22 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - Checks and display the sign of n
+ * main - Prints a random number and states whether
+ *        it is positive, negative, or zero.
  *
- * Return: 0 if correct
- */
+ * Return: Always 0.
+*/
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if (n == 0)
-	{
-		printf("%d is zero\n", n);
-	} else if (n > 0)
-	{
+	if (n > 0)
 		printf("%d is positive\n", n);
-	} else
-	{
+	else if (n < 0)
 		printf("%d is negative\n", n);
-	}
-	return (0);
+	else
+		printf("%d is zero\n", n);
+return (0);
 }

@@ -1,1 +1,1 @@
-This folders contains test scripts
+debugging

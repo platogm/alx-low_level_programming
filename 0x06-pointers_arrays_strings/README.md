@@ -1,1 +1,1 @@
-This folder consists of c language excersises regarding strings
+# More pointers, arrays and strings

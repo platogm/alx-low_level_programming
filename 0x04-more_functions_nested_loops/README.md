@@ -1,1 +1,1 @@
-This folder contains c language scripts for practicing loops
+0x04-more_functions_nested_loops

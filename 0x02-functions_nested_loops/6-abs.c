@@ -1,15 +1,21 @@
+#include "main.h"
 /**
- * _abs - Evaluates the absoulte value
- * @n: the input number
- *
- * Return: Returns the absolute value
+ * _abs - is c _isalpha
+ * @n: contains value to be compared
+ * Return: Always 0.
  */
 int _abs(int n)
 {
-	if (n < 0)
-	{
-		return (-1 * n);
-
-	}
-	return (n);
+if (n < 0)
+{
+return (n * (-1));
+}
+else if (n == 0)
+{
+return (0);
+}
+else
+{
+return (n);
+}
 }

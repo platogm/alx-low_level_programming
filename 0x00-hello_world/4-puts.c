@@ -1,10 +1,7 @@
 #include <stdio.h>
-
 /**
- * main - Prints quote
- *
- * Return: zero on success
- *
+ * main - function to print
+ * Return: Always 0 (Success)
  */
 int main(void)
 {

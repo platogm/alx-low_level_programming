@@ -1,60 +1,40 @@
 #include "main.h"
-#include <stddef.h>
-#include <stdio.h>
 
 /**
- * upper - capitalizes a letter if it is lowercase
- * @c: pointer to a string
- * Return: pointer to string
- **/
-char *upper(char *c)
-{
-	if (c[0] >= 'a' && c[0] <= 'z')
-		c[0] -= 32;
-	return (c);
-}
+ *cap_string - capitalizes all words of a string.
+ *@s: string to use.
+ *
+ *Return: string.
+ */
 
-/**
- * new_word - compares char to chars that indicate a new word
- * @c: char to check
- * Return: 1 if char is a word separator, 0 of not
- **/
-int new_word(char c)
+char *cap_string(char *s)
 {
-	int i = 0;
-	char *word = " \t\n,;.!?\"(){}";
+	int i = 1, j, check;
+char a[] = {',', ';', '.', '!', '?', '"', '(', ')', '{', '}', '\n', '\t', ' '};
 
-	while (word[i] != '\0')
+	if (s[0] > 96 && s[0] < 123)
+		s[0] -= 32;
+
+	while (s[i] != '\0')
 	{
-		if (c == word[i])
-			return (1);
+		if (s[i] > 96 && s[i] < 123)
+		{
+			j = 0;
+			check = 0;
+			while (check == 0 && j < 13)
+			{
+				if (s[i - 1] == a[j])
+				{
+					check = 1;
+				}
+				j++;
+			}
+			if (check == 1)
+			{
+				s[i] -= 32;
+			}
+		}
 		i++;
 	}
-
-	return (0);
-}
-
-/**
- * cap_string - capitalize all words in a string
- * @str: string to modify
- * Return: pointer to str
- **/
-char *cap_string(char *str)
-{
-	int i;
-
-	if (str == NULL)
-		return (NULL);
-	upper(str);
-	if (str[0] == '\0')
-		return (str);
-
-	for (i = 1; str[i] != '\0'; i++)
-	{
-		if (new_word(str[i - 1]) == 1)
-		{
-			upper(&str[i]);
-		}
-	}
-	return (str);
+return (s);
 }

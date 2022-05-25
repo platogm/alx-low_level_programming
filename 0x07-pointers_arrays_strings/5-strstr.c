@@ -1,49 +1,24 @@
 #include "main.h"
 
 /**
- * compare - compares two strings
- * @haystack: source string
- * @needle: string being compared
- * Description: checks if needle is at start of haystack
- * Return: 1 if matches, 0 if not
- **/
-
-int compare(char *haystack, char *needle)
-{
-	int i;
-
-	for (i = 0; needle[i] != '\0'; i++)
-	{
-		if (haystack[i] == '\0')
-			return (0);
-		if (haystack[i] != needle[i])
-			return (0);
-	}
-	return (1);
-}
-
-/**
- * _strstr - locates a substring
- * @haystack: source string
- * @needle: substring
- * Description: finds first instance of needle in haystack
- * Return: pointer to first instance, NULL if not in haystack
- **/
+ * _strstr - returns pointer to first char of matching substring
+ * @haystack: string to find substring in
+ * @needle: substring to find match of
+ * Return: pointer to first char of matching substring
+ */
 
 char *_strstr(char *haystack, char *needle)
 {
-	int j;
+	int k;
 
-	if (needle[0] == '\0')
-		return (haystack);
-
-	for (j = 0; haystack[j] != '\0'; j++)
+	while (*haystack != '\0')
 	{
-		if (needle[0] == haystack[j])
-		{
-			if (compare(&haystack[j], needle) == 1)
-				return (&haystack[j]);
-		}
+		k = 0;
+		while (*haystack == *needle && *haystack != '\0' && *needle != '\0')
+			haystack++, needle++, k++;
+		if (*needle == '\0')
+			return (haystack - k);
+		haystack -= (k - 1), needle -= k;
 	}
-	return (NULL);
+	return ('\0');
 }
